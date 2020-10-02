@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace UserService.Migrations
 {
@@ -11,11 +13,13 @@ namespace UserService.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     firstName = table.Column<string>(nullable: true),
                     lastName = table.Column<string>(nullable: true),
-                    email = table.Column<string>(nullable: true),
-                    password = table.Column<string>(nullable: true)
+                    email = table.Column<string>(nullable: false),
+                    password = table.Column<string>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    ModifiedAt = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

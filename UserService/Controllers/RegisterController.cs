@@ -41,6 +41,10 @@ namespace UserService.Controllers
                 // Encrypt the password
                 user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
 
+                // set creation date
+                user.CreatedAt = DateTime.UtcNow;
+                user.ModifiedAt = DateTime.UtcNow;
+
                 db.Users.Add(user);
                 db.SaveChanges();
 
@@ -53,6 +57,7 @@ namespace UserService.Controllers
             }
         }
 
+        // Function to generate jwt web token
         private string GenerateJSONWebToken(User userInfo)
         {
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));

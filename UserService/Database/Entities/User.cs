@@ -17,6 +17,8 @@ namespace UserService.Database.Entities
         public string email { get; set; }
         [Required]
         public string password { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime ModifiedAt { get; set; }
 
     }
 }

@@ -39,31 +39,45 @@ namespace UserService.Controllers
 
         // GET version/<UserController>/{id}
         [HttpGet("{id}")]
-        public User Get(int id)
+        public IActionResult Get(int id)
         {
-            return db.Users.Find(id);
-        }
-
-        // POST version/<UserController>
-        [HttpPost]
-        public IActionResult Post([FromBody] User model)
-        {
-            try
-            {
-                db.Users.Add(model);
-                db.SaveChanges();
-                return StatusCode(201, model);
-            }
-            catch(Exception ex)
-            {
-                return BadRequest();
-            }
+            var user =  db.Users.Find(id);
+            return Ok(user);
         }
 
         // PUT version/<UserController>/{id}
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void PutId(int id, [FromBody] string value)
         {
+
+        }
+
+        // PUT version/<UserController>
+        [HttpPut()]
+        public async Task<ActionResult> PutAsync([FromBody] User model)
+        {
+            int idClaims = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+
+            User user = await db.Users.FindAsync(idClaims);
+
+            if (user == null)
+                return BadRequest();
+
+            user.firstName = model.firstName;
+            user.firstName = model.firstName;
+            // Encrypt the password
+            user.password = BCrypt.Net.BCrypt.HashPassword(model.password);
+
+            // set modification date
+            user.ModifiedAt = DateTime.UtcNow;
+
+            db.Update(user);
+            db.SaveChanges();
+
+            return Ok(new {
+                message = "user modified successefully",
+                user
+            });
         }
 
         // DELETE version/<UserController>/{id}

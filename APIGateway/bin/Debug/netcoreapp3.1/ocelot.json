@@ -13,6 +13,18 @@
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
     },
     {
+      "DownstreamPathTemplate": "/v1/users/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5100
+        }
+      ],
+      "UpstreamPathTemplate": "/v1/users/{id}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+    },
+    {
       "DownstreamPathTemplate": "/v1/login",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
