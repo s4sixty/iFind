@@ -38,3 +38,8 @@ C:\iFind\iFind\APIGateway\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0
 C:\iFind\iFind\APIGateway\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\iFind\iFind\APIGateway\bin\Debug\netcoreapp3.1\nlog.config
 C:\iFind\iFind\APIGateway\bin\Debug\netcoreapp3.1\NLog.dll
+C:\iFind\iFind\APIGateway\bin\Debug\netcoreapp3.1\NLog.Extensions.Logging.dll
+C:\iFind\iFind\APIGateway\bin\Debug\netcoreapp3.1\NLog.Web.AspNetCore.dll
+C:\iFind\iFind\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.csproj.CoreCompileInputs.cache
+C:\iFind\iFind\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.MvcApplicationPartsAssemblyInfo.cs
+C:\iFind\iFind\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.MvcApplicationPartsAssemblyInfo.cache

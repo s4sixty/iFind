@@ -24,6 +24,6 @@ namespace UserService.Database.Entities
         public string password { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
-
+        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }
