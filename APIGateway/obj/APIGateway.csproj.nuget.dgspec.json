@@ -38,7 +38,19 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "NLog": {
+              "target": "Package",
+              "version": "[4.7.5, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.9.3, )"
+            },
             "Ocelot": {
+              "target": "Package",
+              "version": "[16.0.1, )"
+            },
+            "Ocelot.Cache.CacheManager": {
               "target": "Package",
               "version": "[16.0.1, )"
             }

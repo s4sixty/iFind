@@ -10,7 +10,8 @@
         }
       ],
       "UpstreamPathTemplate": "/v1/users",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
       "DownstreamPathTemplate": "/v1/users/{id}",
@@ -22,7 +23,8 @@
         }
       ],
       "UpstreamPathTemplate": "/v1/users/{id}",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
       "DownstreamPathTemplate": "/v1/login",
@@ -34,7 +36,8 @@
         }
       ],
       "UpstreamPathTemplate": "/v1/login",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
       "DownstreamPathTemplate": "/v1/register",
@@ -46,7 +49,8 @@
         }
       ],
       "UpstreamPathTemplate": "/v1/register",
-      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ]
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
     }
   ]
 }
