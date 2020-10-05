@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,10 +21,11 @@ namespace UserService.Controllers
     public class UsersController : ControllerBase
     {
         DatabaseContext db;
-
-        public UsersController()
+        private IMapper _mapper;
+        public UsersController(IMapper mapper)
         {
             db = new DatabaseContext();
+            _mapper = mapper;
         }
 
         // GET: version/<UserController>
@@ -34,7 +36,20 @@ namespace UserService.Controllers
 
             User user = await db.Users.FindAsync(idClaims);
 
-            return user;
+            var model = _mapper.Map<UserDTO>(user);
+
+            return Ok(model);
+        }
+
+        // GET: version/<UserController>
+        [HttpGet("/all")]
+        public ActionResult<User> GetAllAsync()
+        {
+            List<User> users = db.Users.ToList();
+
+            var model = _mapper.Map<UserDTO>(users);
+
+            return Ok(model);
         }
 
         // GET version/<UserController>/{id}
@@ -42,6 +57,10 @@ namespace UserService.Controllers
         public IActionResult Get(int id)
         {
             var user =  db.Users.Find(id);
+
+            if (user == null)
+                return NotFound();
+
             return Ok(user);
         }
 

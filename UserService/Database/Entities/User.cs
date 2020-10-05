@@ -26,4 +26,16 @@ namespace UserService.Database.Entities
         public DateTime ModifiedAt { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
     }
+
+    public class UserDTO
+    {
+        public int Id { get; set; }
+        [StringLength(20, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 3)]
+        public string firstName { get; set; }
+        [StringLength(20, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 3)]
+        public string lastName { get; set; }
+        [EmailAddress]
+        public string email { get; set; }
+        public virtual ICollection<UserRole> UserRoles { get; set; }
+    }
 }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,10 +24,12 @@ namespace UserService.Controllers
     {
         DatabaseContext db;
         private IConfiguration _config;
-        public LoginController(IConfiguration config)
+        private readonly IMapper _mapper;
+        public LoginController(IConfiguration config, IMapper mapper)
         {
             db = new DatabaseContext();
             _config = config;
+            _mapper = mapper;
         }
 
         // POST version/<UserController>
@@ -46,13 +49,13 @@ namespace UserService.Controllers
                     return Unauthorized("Invalid password");
 
                 var tokenString = GenerateJSONWebToken(user);
+
+                var model = _mapper.Map<UserDTO>(user);
+
                 return Ok(new 
                 { 
-                    id = user.Id,
-                    user.firstName,
-                    user.lastName,
-                    user.email,
-                    token = tokenString 
+                    model,
+                    token = tokenString
                 });
             }
             catch (Exception ex)
