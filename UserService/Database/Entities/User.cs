@@ -24,7 +24,8 @@ namespace UserService.Database.Entities
         public string password { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
-        public virtual ICollection<UserRole> UserRoles { get; set; }
+        [JsonIgnore]
+        public string Role { get; set; }
     }
 
     public class UserDTO
@@ -36,6 +37,5 @@ namespace UserService.Database.Entities
         public string lastName { get; set; }
         [EmailAddress]
         public string email { get; set; }
-        public virtual ICollection<UserRole> UserRoles { get; set; }
     }
 }

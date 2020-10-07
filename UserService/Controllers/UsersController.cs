@@ -7,6 +7,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using UserService.Database;
 using UserService.Database.Entities;
 
@@ -29,6 +30,15 @@ namespace UserService.Controllers
         }
 
         // GET: version/<UserController>
+        [HttpGet("all")]
+        public ActionResult<User> GetAllAsync()
+        {
+            var users = db.Users.ToList();
+
+            return Ok(users);
+        }
+
+        // GET: version/<UserController>
         [HttpGet]
         public async Task<ActionResult<User>> GetAsync()
         {
@@ -37,17 +47,6 @@ namespace UserService.Controllers
             User user = await db.Users.FindAsync(idClaims);
 
             var model = _mapper.Map<UserDTO>(user);
-
-            return Ok(model);
-        }
-
-        // GET: version/<UserController>
-        [HttpGet("/all")]
-        public ActionResult<User> GetAllAsync()
-        {
-            List<User> users = db.Users.ToList();
-
-            var model = _mapper.Map<UserDTO>(users);
 
             return Ok(model);
         }

@@ -46,16 +46,7 @@ namespace UserService.Controllers
                 user.ModifiedAt = DateTime.UtcNow;
 
                 // add default user role
-                Role userRole = db.Roles.FirstOrDefault(x => x.Name.Equals("User"));
-                user.UserRoles = new List<UserRole>
-                {
-                    new UserRole
-                    {
-                        User = user,
-                        Role = userRole
-                    }
-                };
-
+                user.Role = Role.User;
 
                 db.Users.Add(user);
                 db.SaveChanges();
