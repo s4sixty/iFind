@@ -80,8 +80,6 @@ namespace UserService
 
             app.UseMvc();
 
-            app.UseAuthorization();
-
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
@@ -89,6 +87,10 @@ namespace UserService
             });
 
             app.UseRouting();
+
+            app.UseAuthorization();
+
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
