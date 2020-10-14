@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
@@ -7,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -35,7 +33,7 @@ namespace UserService.Controllers
         // POST version/<UserController>
         [AllowAnonymous]
         [HttpPost]
-        public async Task<IActionResult> PostAsync([FromBody]User data)
+        public async Task<IActionResult> PostAsync([FromBody] AuthenticationModel data)
         {
             try
             {
@@ -54,7 +52,7 @@ namespace UserService.Controllers
 
                 return Ok(new 
                 { 
-                    model,
+                    user = model,
                     token = tokenString
                 });
             }
@@ -71,7 +69,8 @@ namespace UserService.Controllers
 
             var claims = new[] {
                 new Claim(ClaimTypes.NameIdentifier, userInfo.Id.ToString()),
-                new Claim(JwtRegisteredClaimNames.Email, userInfo.email)
+                new Claim(JwtRegisteredClaimNames.Email, userInfo.email),
+                new Claim(ClaimTypes.Role, userInfo.Role)
             };
 
             var token = new JwtSecurityToken(_config["Jwt:Issuer"],

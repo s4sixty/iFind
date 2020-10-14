@@ -30,6 +30,7 @@ namespace UserService.Controllers
         }
 
         // GET: version/<UserController>
+        [Authorize(Roles = Role.Admin)]
         [HttpGet("all")]
         public ActionResult<User> GetAllAsync()
         {

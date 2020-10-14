@@ -38,4 +38,12 @@ namespace UserService.Database.Entities
         [EmailAddress]
         public string email { get; set; }
     }
+
+    public class AuthenticationModel
+    {
+        [EmailAddress]
+        public string email { get; set; }
+        [MinLength(6)]
+        public string password { get; set; }
+    }
 }

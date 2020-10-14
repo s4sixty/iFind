@@ -69,6 +69,10 @@ C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microso
 C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\iFind\iFind\UserService\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\iFind\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.csproj.CoreCompileInputs.cache
 C:\iFind\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cs
 C:\iFind\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cache

@@ -1,0 +1,12 @@
+2020-10-08 00:33:02.0314||DEBUG|APIGateway.Program|init main function 
+2020-10-08 00:33:03.5185||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-10-08 00:33:03.5185||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-10-08 00:33:03.5364||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\iFind\iFind\APIGateway 
+2020-10-08 00:33:03.7542||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000021-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /v1/register 
+2020-10-08 00:33:03.7542||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000021-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /v1/register 
+2020-10-08 00:33:03.7542||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000021-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /v1/register route does not require user to be authorised 
+2020-10-08 00:33:07.3996||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000021-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 409 (Conflict) status code, request uri: http://localhost:5100/v1/register 
+2020-10-08 00:33:19.7670||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000023-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /v1/register 
+2020-10-08 00:33:19.7670||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000023-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /v1/register 
+2020-10-08 00:33:19.7841||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000023-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /v1/register route does not require user to be authorised 
+2020-10-08 00:33:20.3926||INFO|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000023-0000-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 200 (OK) status code, request uri: http://localhost:5100/v1/register 
