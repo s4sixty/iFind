@@ -26,6 +26,9 @@ namespace LostItemsService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            // Add API Versioning to the service container
+            services.AddApiVersioning();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
