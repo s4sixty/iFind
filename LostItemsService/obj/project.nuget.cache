@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HAKuDLNY9GmIyBxil2ahhvYagiagJlTbbapkWnTuKY4UOEhJwWJmQrE7tsQqbzGN9rzSf/MYHe7+3v3xb53q3w==",
+  "dgSpecHash": "xAmrV22z0olpfrJZQADvz9TGi0/F4oa4CTxm9i/zRXaMKm4vgvoUoCAJTvS/sJ4JrHM8VlZtvu6u98GYnhCY5Q==",
   "success": true,
-  "projectFilePath": "C:\\iFind\\iFind\\LostItemsService\\LostItemsService.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\HOMEWARE\\dev\\iFind\\LostItemsService\\LostItemsService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\samir\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\4.2.0\\microsoft.aspnetcore.mvc.versioning.4.2.0.nupkg.sha512"
+  ],
   "logs": []
 }

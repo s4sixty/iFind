@@ -1,0 +1,6 @@
+2020-11-09 12:49:13.2090||DEBUG|APIGateway.Program|init main function 
+2020-11-09 12:49:14.2247||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-11-09 12:49:14.2247||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-11-09 12:49:14.2329||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-11-09 12:49:14.2754||WARN|Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware|requestId: 80000008-0008-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: DownstreamRouteFinderMiddleware setting pipeline errors. IDownstreamRouteFinder returned Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /, verb: GET. 
+2020-11-09 12:49:14.2780||WARN|Ocelot.Responder.Middleware.ResponderMiddleware|requestId: 80000008-0008-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: Error Code: UnableToFindDownstreamRouteError Message: Failed to match Route configuration for upstream path: /, verb: GET. errors found in ResponderMiddleware. Setting error response for request path:/, request method: GET 

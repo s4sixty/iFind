@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\iFind\\iFind\\FoundItemsService\\FoundItemsService.csproj": {}
+    "C:\\HOMEWARE\\dev\\iFind\\FoundItemsService\\FoundItemsService.csproj": {}
   },
   "projects": {
-    "C:\\iFind\\iFind\\FoundItemsService\\FoundItemsService.csproj": {
+    "C:\\HOMEWARE\\dev\\iFind\\FoundItemsService\\FoundItemsService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\iFind\\iFind\\FoundItemsService\\FoundItemsService.csproj",
+        "projectUniqueName": "C:\\HOMEWARE\\dev\\iFind\\FoundItemsService\\FoundItemsService.csproj",
         "projectName": "FoundItemsService",
-        "projectPath": "C:\\iFind\\iFind\\FoundItemsService\\FoundItemsService.csproj",
-        "packagesPath": "C:\\Users\\samri\\.nuget\\packages\\",
-        "outputPath": "C:\\iFind\\iFind\\FoundItemsService\\obj\\",
+        "projectPath": "C:\\HOMEWARE\\dev\\iFind\\FoundItemsService\\FoundItemsService.csproj",
+        "packagesPath": "C:\\Users\\samir\\.nuget\\packages\\",
+        "outputPath": "C:\\HOMEWARE\\dev\\iFind\\FoundItemsService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\samri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\samir\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
