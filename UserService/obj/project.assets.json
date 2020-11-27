@@ -6933,19 +6933,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\samri\\.nuget\\packages\\": {}
+    "C:\\Users\\samir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\iFind\\iFind\\UserService\\UserService.csproj",
+      "projectUniqueName": "C:\\HOMEWARE\\dev\\iFind\\UserService\\UserService.csproj",
       "projectName": "UserService",
-      "projectPath": "C:\\iFind\\iFind\\UserService\\UserService.csproj",
-      "packagesPath": "C:\\Users\\samri\\.nuget\\packages\\",
-      "outputPath": "C:\\iFind\\iFind\\UserService\\obj\\",
+      "projectPath": "C:\\HOMEWARE\\dev\\iFind\\UserService\\UserService.csproj",
+      "packagesPath": "C:\\Users\\samir\\.nuget\\packages\\",
+      "outputPath": "C:\\HOMEWARE\\dev\\iFind\\UserService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\samri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\samir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6957,6 +6957,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "projectReferences": {}
         }
       },
@@ -6968,6 +6969,7 @@
     },
     "frameworks": {
       "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
@@ -7052,7 +7054,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
