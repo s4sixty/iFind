@@ -78,7 +78,6 @@ C:\iFind\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPar
 C:\iFind\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.MvcApplicationPartsAssemblyInfo.cache
 C:\HOMEWARE\dev\iFind\UserService\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\HOMEWARE\dev\iFind\UserService\bin\Debug\netcoreapp3.1\appsettings.json
-C:\HOMEWARE\dev\iFind\UserService\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\HOMEWARE\dev\iFind\UserService\bin\Debug\netcoreapp3.1\UserService.exe
 C:\HOMEWARE\dev\iFind\UserService\bin\Debug\netcoreapp3.1\UserService.deps.json
 C:\HOMEWARE\dev\iFind\UserService\bin\Debug\netcoreapp3.1\UserService.runtimeconfig.json
@@ -154,3 +153,4 @@ C:\HOMEWARE\dev\iFind\UserService\obj\Debug\netcoreapp3.1\staticwebassets\UserSe
 C:\HOMEWARE\dev\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.dll
 C:\HOMEWARE\dev\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.pdb
 C:\HOMEWARE\dev\iFind\UserService\obj\Debug\netcoreapp3.1\UserService.genruntimeconfig.cache
+C:\HOMEWARE\dev\iFind\UserService\obj\Debug\netcoreapp3.1\scopedcss\bundle\UserService.styles.css

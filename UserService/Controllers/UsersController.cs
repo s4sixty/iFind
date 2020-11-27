@@ -21,8 +21,8 @@ namespace UserService.Controllers
     [Authorize]
     public class UsersController : ControllerBase
     {
-        DatabaseContext db;
-        private IMapper _mapper;
+        readonly DatabaseContext db;
+        private readonly IMapper _mapper;
         public UsersController(IMapper mapper)
         {
             db = new DatabaseContext();
@@ -53,6 +53,7 @@ namespace UserService.Controllers
         }
 
         // GET version/<UserController>/{id}
+        [Authorize(Roles = Role.Admin)]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -62,13 +63,6 @@ namespace UserService.Controllers
                 return NotFound();
 
             return Ok(user);
-        }
-
-        // PUT version/<UserController>/{id}
-        [HttpPut("{id}")]
-        public void PutId(int id, [FromBody] string value)
-        {
-
         }
 
         // PUT version/<UserController>

@@ -20,8 +20,8 @@ namespace UserService.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        DatabaseContext db;
-        private IConfiguration _config;
+        readonly DatabaseContext db;
+        private readonly IConfiguration _config;
         private readonly IMapper _mapper;
         public LoginController(IConfiguration config, IMapper mapper)
         {

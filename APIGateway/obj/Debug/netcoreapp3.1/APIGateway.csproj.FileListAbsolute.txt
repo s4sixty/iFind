@@ -46,7 +46,6 @@ C:\iFind\iFind\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.MvcApplicationParts
 C:\HOMEWARE\dev\iFind\APIGateway\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\HOMEWARE\dev\iFind\APIGateway\bin\Debug\netcoreapp3.1\appsettings.json
 C:\HOMEWARE\dev\iFind\APIGateway\bin\Debug\netcoreapp3.1\ocelot.json
-C:\HOMEWARE\dev\iFind\APIGateway\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\HOMEWARE\dev\iFind\APIGateway\bin\Debug\netcoreapp3.1\APIGateway.exe
 C:\HOMEWARE\dev\iFind\APIGateway\bin\Debug\netcoreapp3.1\nlog.config
 C:\HOMEWARE\dev\iFind\APIGateway\bin\Debug\netcoreapp3.1\APIGateway.deps.json
@@ -88,3 +87,4 @@ C:\HOMEWARE\dev\iFind\APIGateway\obj\Debug\netcoreapp3.1\staticwebassets\APIGate
 C:\HOMEWARE\dev\iFind\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.dll
 C:\HOMEWARE\dev\iFind\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.pdb
 C:\HOMEWARE\dev\iFind\APIGateway\obj\Debug\netcoreapp3.1\APIGateway.genruntimeconfig.cache
+C:\HOMEWARE\dev\iFind\APIGateway\obj\Debug\netcoreapp3.1\scopedcss\bundle\APIGateway.styles.css

@@ -14,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using UserService.Helpers;
 using UserService.Mappings;
 
 namespace UserService
@@ -35,6 +36,9 @@ namespace UserService
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "iFind Auth Service", Version = "v1" });
+                c.ResolveConflictingActions(a => a.First());
+                c.OperationFilter<RemoveVersionFromParameter>();
+                c.DocumentFilter<ReplaceVersionWithExactValueInPath>();
             });
 
             services.AddControllers()
