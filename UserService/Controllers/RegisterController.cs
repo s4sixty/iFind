@@ -14,7 +14,7 @@ using UserService.Database.Entities;
 
 namespace UserService.Controllers
 {
-    [Route("v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/register")]
     [ApiVersion("1.0")]
     [ApiController]
     public class RegisterController : ControllerBase

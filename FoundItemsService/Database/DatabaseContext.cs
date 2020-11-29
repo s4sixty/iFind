@@ -9,7 +9,7 @@ namespace FoundItemsService.Database
 {
     public class DatabaseContext : DbContext
     {
-        public DbSet<Owner> Owners { get; set; }
+        public DbSet<Comments> Comments { get; set; }
         public DbSet<FoundItem> FoundItems { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -21,6 +21,13 @@ namespace FoundItemsService.Database
                 "Password=ed5572d8d214462b16d206cd0f5a009f1a505d65a49435310d4608954a1e4ad8;" +
                 "Port=5432;" +
                 "Pooling=true;SSL Mode=Require;TrustServerCertificate=True;");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<FoundItem>()
+                .HasMany(c => c.Comments)
+                .WithOne(e => e.FoundItem);
         }
     }
 }

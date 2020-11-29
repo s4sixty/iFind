@@ -26,10 +26,13 @@ namespace LostItemsService.Database.Entities
         public DateTime? FoundAt { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
+        public ICollection<Comments> Comments { get; set; }
+        public string Photo { get; set; }
     }
 
     public class LostItemDTO
     {
+        public int Id { get; set; }
         [Required]
         public string Name { get; set; }
         public string Model { get; set; }
@@ -43,6 +46,6 @@ namespace LostItemsService.Database.Entities
         public bool Found { get; set; }
         public DateTime? FoundAt { get; set; }
         public DateTime CreatedAt { get; set; }
-        public DateTime ModifiedAt { get; set; }
+        public string Photo { get; set; }
     }
 }

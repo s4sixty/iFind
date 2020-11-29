@@ -26,6 +26,7 @@ namespace FoundItemsService.Database.Entities
         public DateTime? FoundAt { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
+        public ICollection<Comments> Comments { get; set; }
     }
 
     public class FoundItemDTO
