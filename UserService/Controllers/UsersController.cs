@@ -15,7 +15,7 @@ using UserService.Database.Entities;
 
 namespace UserService.Controllers
 {
-    [Route("v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/users")]
     [ApiController]
     [ApiVersion("1.0")]
     [Authorize]
@@ -53,7 +53,6 @@ namespace UserService.Controllers
         }
 
         // GET version/<UserController>/{id}
-        [Authorize(Roles = Role.Admin)]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
@@ -62,7 +61,9 @@ namespace UserService.Controllers
             if (user == null)
                 return NotFound();
 
-            return Ok(user);
+            var model = _mapper.Map<UserDTO>(user);
+
+            return Ok(model);
         }
 
         // PUT version/<UserController>

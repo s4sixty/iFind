@@ -15,7 +15,7 @@ using UserService.Database.Entities;
 
 namespace UserService.Controllers
 {
-    [Route("v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/login")]
     [ApiVersion("1.0")]
     [ApiController]
     public class LoginController : ControllerBase
