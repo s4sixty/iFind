@@ -84,8 +84,14 @@ namespace LostItemsService.Migrations
                         .HasColumnType("character varying(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
+
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("city")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

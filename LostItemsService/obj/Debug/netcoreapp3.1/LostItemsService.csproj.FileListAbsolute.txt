@@ -79,3 +79,4 @@ C:\HOMEWARE\dev\iFind\LostItemsService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.Asy
 C:\HOMEWARE\dev\iFind\LostItemsService\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\HOMEWARE\dev\iFind\LostItemsService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
 C:\HOMEWARE\dev\iFind\LostItemsService\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\HOMEWARE\dev\iFind\LostItemsService\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll

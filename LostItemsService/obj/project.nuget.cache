@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "++hPZ/2s4chc3ER5PavhIqH+s6g7WyhpZaMvrjXSeMphfD/nk3QLf9yJ8DyEZplidpJYslkMjJ2r1zIoc2iy3w==",
+  "dgSpecHash": "JKKYHu/wlya7eDleTCbwlFHTlsJSpXW8XUDwjayK6uORlMDU1jBvA1mFyQLBWBi5pA4AbxDhB3F5uie3Y0B8aQ==",
   "success": true,
   "projectFilePath": "C:\\HOMEWARE\\dev\\iFind\\LostItemsService\\LostItemsService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samir\\.nuget\\packages\\automapper\\10.1.0\\automapper.10.1.0.nupkg.sha512",
     "C:\\Users\\samir\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.0\\automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "C:\\Users\\samir\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\samir\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\samir\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.10\\microsoft.aspnetcore.jsonpatch.3.1.10.nupkg.sha512",
     "C:\\Users\\samir\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\3.1.10\\microsoft.aspnetcore.mvc.newtonsoftjson.3.1.10.nupkg.sha512",
@@ -52,12 +53,5 @@
     "C:\\Users\\samir\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
     "C:\\Users\\samir\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\HOMEWARE\\dev\\iFind\\LostItemsService\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

@@ -26,6 +26,7 @@ namespace LostItemsService.Database.Entities
         public DateTime? FoundAt { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime ModifiedAt { get; set; }
+        public string city { get; set; }
         public ICollection<Comments> Comments { get; set; }
         public string Photo { get; set; }
     }
@@ -43,6 +44,7 @@ namespace LostItemsService.Database.Entities
         public string Color { get; set; }
         [StringLength(5000, ErrorMessage = "{0} length must be between {2} and {1}.", MinimumLength = 0)]
         public string Description { get; set; }
+        public string city { get; set; }
         public bool Found { get; set; }
         public DateTime? FoundAt { get; set; }
         public DateTime CreatedAt { get; set; }

@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LostItemsService.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20201129182833_comments")]
-    partial class comments
+    [Migration("20201130132315_localisation")]
+    partial class localisation
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,8 +86,14 @@ namespace LostItemsService.Migrations
                         .HasColumnType("character varying(20)")
                         .HasMaxLength(20);
 
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
+
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("city")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 

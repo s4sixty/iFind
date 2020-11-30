@@ -11,8 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,7 +29,7 @@ namespace LostItemsService.Controllers
         private readonly IConfiguration _config;
         private readonly IMapper _mapper;
 
-        public LostController(IConfiguration config, IMapper mapper)
+    public LostController(IConfiguration config, IMapper mapper)
         {
             db = new DatabaseContext();
             _config = config;
@@ -42,7 +42,7 @@ namespace LostItemsService.Controllers
         {
             var item = db.LostItems
                 .Include(c => c.Comments)
-                .Where(c=>c.Id==id);
+                .Where(c => c.Id == id);
             if (item == null)
                 return NotFound();
 
@@ -50,19 +50,12 @@ namespace LostItemsService.Controllers
             string token = GenerateJSONWebToken(UserId);
 
             var client = new HttpClient();
-            var httpRequestMessage = new HttpRequestMessage
-            {
-                Method = HttpMethod.Get,
-                RequestUri = new Uri("https://ifind-auth.herokuapp.com/v1/users/"+UserId),
-                Headers = {
-                { HttpRequestHeader.Authorization.ToString(), "Bearer "+token },
-                { HttpRequestHeader.Accept.ToString(), "application/json" },
-                { "X-Version", "1" }
-            }};
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await client.GetAsync("https://ifind-auth.herokuapp.com/api/v1/users/");
+            var stringJson = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<object>(stringJson);
 
-            var response = client.SendAsync(httpRequestMessage).Result;
-
-            return Ok(new { item, response });
+            return Ok(new { item, owner = result });
         }
 
         // GET: version/<LostController>
