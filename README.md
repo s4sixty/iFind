@@ -2,11 +2,11 @@
  
 Plateforme user-friendly qui vous aide à retrouver vos objets perdus.
 
-| Image | Status |
-| ------------- | ------------- |
-| Api Gateway (base) | https://ifind-gtw.herokuapp.com/ |
-| Found Items Service (base) | https://ifind-fndi.herokuapp.com/ |
-| Lost Items Service (base) | https://ifind-lsti.herokuapp.com/ |
-| Authentication Service (base) | https://ifind-auth.herokuapp.com/ |
+| Image | Link | Docuemnetation |
+| ------------- | ------------- | ------------- |
+| Api Gateway (base) | https://ifind-gtw.herokuapp.com/ | https://ifind-gtw.herokuapp.com/swagger
+| Found Items Service (base) | https://ifind-fndi.herokuapp.com/ | https://ifind-fndi.herokuapp.com/swagger
+| Lost Items Service (base) | https://ifind-lsti.herokuapp.com/ | https://ifind-lsti.herokuapp.com/swagger
+| Authentication Service (base) | https://ifind-auth.herokuapp.com/ | https://ifind-auth.herokuapp.com/swagger
 
 _**Develop** branche contient la dernière version **beta** du projet_
