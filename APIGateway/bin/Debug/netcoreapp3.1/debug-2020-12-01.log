@@ -367,3 +367,27 @@
 2020-12-01 12:10:17.0848||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
 2020-12-01 12:10:17.0848||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
 2020-12-01 12:10:17.4443||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 404 (Not Found) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/users/all 
+2020-12-01 12:13:11.4830||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:13:12.2812||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:13:12.2892||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:13:12.2892||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:13:12.3910||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 12:13:12.3958||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 12:13:12.3958||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 12:13:13.1330||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 405 (Method Not Allowed) status code, request uri: https://ifind-auth.herokuapp.com/api/v1/users/all 
+2020-12-01 12:13:21.5513||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:13:21.5513||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:13:21.5513||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:13:23.9026||INFO|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 200 (OK) status code, request uri: https://ifind-auth.herokuapp.com/api/v1/login 
+2020-12-01 12:19:57.1175||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:19:57.9720||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:19:57.9772||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:19:57.9772||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:19:58.0928||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:19:58.0980||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:19:58.0980||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:19:58.7665||INFO|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 200 (OK) status code, request uri: https://ifind-auth.herokuapp.com/api/v1/login 
+2020-12-01 12:20:11.0806||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/found/all 
+2020-12-01 12:20:11.0835||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/found/all 
+2020-12-01 12:20:11.0835||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/found/all route does not require user to be authorised 
+2020-12-01 12:20:13.8880||INFO|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 200 (OK) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/found/all 
