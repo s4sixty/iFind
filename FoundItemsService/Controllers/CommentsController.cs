@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using LostItemsService.Database;
-using LostItemsService.Database.Entities;
+using FoundItemsService.Database;
+using FoundItemsService.Database.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -10,9 +10,9 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
-namespace LostItemsService.Controllers
+namespace FoundItemsService.Controllers
 {
-    [Route("api/v{version:apiVersion}/lost")]
+    [Route("api/v{version:apiVersion}/Found")]
     [ApiVersion("1.0")]
     [ApiController]
     [Authorize]
@@ -28,18 +28,18 @@ namespace LostItemsService.Controllers
             _mapper = mapper;
         }
 
-        // GET version/<LostController>/{id}
+        // GET version/<FoundController>/{id}
         [HttpPost("{id}/comments")]
         public async Task<IActionResult> PostAsync([FromBody] Comments comment, int id)
         {
 
-            LostItem item = await db.LostItems.FindAsync(id);
+            FoundItem item = await db.FoundItems.FindAsync(id);
             if (item == null)
                 return NotFound();
             comment.UserId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
             // set creation date
             comment.CreatedAt = DateTime.UtcNow;
-            comment.LostItem = item;
+            comment.FoundItem = item;
             db.Comments.Add(comment);
             //item.Comments.Add(comment);
             db.SaveChanges();
@@ -47,7 +47,7 @@ namespace LostItemsService.Controllers
             return Ok(new { comment, item });
         }
 
-        // GET version/<LostController>/{id}
+        // GET version/<FoundController>/{id}
         [HttpDelete("{id}/comments/{commentId}")]
         public IActionResult Delete(int id, int commentId)
         {
@@ -56,7 +56,7 @@ namespace LostItemsService.Controllers
             if (comment == null)
                 return NotFound();
             int UserId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
-            if(comment.UserId == UserId)
+            if (comment.UserId == UserId)
             {
                 db.Comments.Remove(comment);
                 db.SaveChanges();
@@ -65,14 +65,15 @@ namespace LostItemsService.Controllers
                     message = "comment deleted succesefully.",
                     comment
                 });
-            } else
+            }
+            else
             {
                 return Unauthorized(new
                 {
-                    message="Not authorized"
+                    message = "Not authorized"
                 });
             }
-        
+
         }
     }
 }

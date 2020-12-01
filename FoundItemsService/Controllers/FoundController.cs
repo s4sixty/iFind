@@ -1,18 +1,28 @@
 ﻿using AutoMapper;
 using FoundItemsService.Database;
 using FoundItemsService.Database.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Security.Claims;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace FoundItemsService.Controllers
 {
-    [Route("v{version:apiVersion}/[controller]")]
+    [Route("api/v{version:apiVersion}/Found")]
     [ApiVersion("1.0")]
     [ApiController]
+    [Authorize]
     public class FoundController : Controller
     {
         readonly DatabaseContext db;
@@ -26,37 +36,52 @@ namespace FoundItemsService.Controllers
             _mapper = mapper;
         }
 
-        // GET version/<LostController>/{id}
+        // GET version/<FoundController>/{id}
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public async Task<IActionResult> GetAsync(int id)
         {
-            var item = db.FoundItems.Find(id);
-
+            var item = db.FoundItems
+                .Include(c => c.Comments)
+                .Where(c => c.Id == id);
             if (item == null)
                 return NotFound();
 
-            return Ok(item);
+            FoundItem owner = await db.FoundItems.FindAsync(id);
+            int UserId = owner.UserId;
+            string token = GenerateJSONWebToken(UserId);
+
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await client.GetAsync("https://ifind-auth.herokuapp.com/api/v1/users/");
+            var stringJson = await response.Content.ReadAsStringAsync();
+            var result = JsonConvert.DeserializeObject<object>(stringJson);
+
+            return Ok(new { item, owner = result });
         }
 
-        // GET: version/<LostController>
+        // GET: version/<FoundController>
         [HttpGet("all")]
         public ActionResult<FoundItem> GetAllAsync()
         {
             var items = db.FoundItems.ToList();
 
-            return Ok(items);
+            ICollection<FoundItemDTO> model = _mapper.Map<ICollection<FoundItem>, ICollection<FoundItemDTO>>(items);
+
+            return Ok(model);
         }
 
-        // POST version/<LostController>
+        // POST version/<FoundController>
         [HttpPost]
         public IActionResult Post([FromBody] FoundItem item)
         {
             try
             {
                 FoundItem itemCheck = db.FoundItems.SingleOrDefault(x => x.Id.Equals(item.Id));
-                // check if username exists
+                // check if item exists
                 if (itemCheck != null)
                     return Conflict();
+
+                item.UserId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
 
                 // set creation date
                 item.CreatedAt = DateTime.UtcNow;
@@ -73,7 +98,7 @@ namespace FoundItemsService.Controllers
             }
         }
 
-        // POST version/<LostController>
+        // POST version/<FoundController>
         [HttpPut]
         public IActionResult Put([FromBody] FoundItem item)
         {
@@ -102,7 +127,7 @@ namespace FoundItemsService.Controllers
             }
         }
 
-        // DELETE version/<LostController>/{id}
+        // DELETE version/<FoundController>/{id}
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -114,6 +139,24 @@ namespace FoundItemsService.Controllers
                 message = "item deleted succesefully.",
                 item
             });
+        }
+
+        private string GenerateJSONWebToken(int UserId)
+        {
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+            var claims = new[] {
+                new Claim(ClaimTypes.NameIdentifier, UserId.ToString())
+            };
+
+            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
+              _config["Jwt:Issuer"],
+              claims,
+              expires: DateTime.Now.AddDays(3),
+              signingCredentials: credentials);
+
+            return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }
 }

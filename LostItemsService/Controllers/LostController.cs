@@ -46,7 +46,8 @@ namespace LostItemsService.Controllers
             if (item == null)
                 return NotFound();
 
-            int UserId = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            LostItem owner = await db.LostItems.FindAsync(id);
+            int UserId = owner.UserId;
             string token = GenerateJSONWebToken(UserId);
 
             var client = new HttpClient();
