@@ -1,54 +1,55 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/v1/users",
+      // Authenticantion service routes
+      "DownstreamPathTemplate": "/api/v1/users",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/users",
+      "UpstreamPathTemplate": "/api/v1/users",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
-      "DownstreamPathTemplate": "/v1/users/{id}",
+      "DownstreamPathTemplate": "/api/v1/users/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/users/{id}",
+      "UpstreamPathTemplate": "/api/v1/users/{id}",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
-      "DownstreamPathTemplate": "/v1/login",
+      "DownstreamPathTemplate": "/api/v1/login",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/login",
+      "UpstreamPathTemplate": "/api/v1/login",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
-      "DownstreamPathTemplate": "/v1/register",
+      "DownstreamPathTemplate": "/api/v1/register",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/register",
+      "UpstreamPathTemplate": "/api/v1/register",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     }

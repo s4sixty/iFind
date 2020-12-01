@@ -113,9 +113,9 @@ function FoundItemsStack(props) {
           cardStyle: { backgroundColor: "#F8F9FE" }
         }}
       />
-            <Stack.Screen
-        name="Pro"
-        component={Pro}
+      <Stack.Screen
+        name="ItemDetails"
+        component={ItemDetails}
         options={{
           header: ({ navigation, scene }) => (
             <Header

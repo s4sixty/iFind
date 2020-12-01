@@ -6,8 +6,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "https://ifind-fndi.herokuapp.com",
-          "Port": 80
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/v1/users",
@@ -19,8 +19,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "https://ifind-fndi.herokuapp.com",
-          "Port": 80
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/v1/users/{id}",
@@ -32,8 +32,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "https://ifind-fndi.herokuapp.com",
-          "Port": 80
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/v1/login",
@@ -45,8 +45,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "https://ifind-fndi.herokuapp.com",
-          "Port": 80
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
         }
       ],
       "UpstreamPathTemplate": "/api/v1/register",

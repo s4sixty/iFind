@@ -53,12 +53,12 @@ const LostItems = (props) => {
               //{console.log(item)}
               return (
               <Block key={item.id} row card flex style={[styles.card, styles.shadow]}>
-                <TouchableWithoutFeedback onPress={() => props.navigation.navigate("ItemDetails",{id : item.id} )}>
+                <TouchableWithoutFeedback onPress={() => props.navigation.navigate("ItemDetails",{id : item.id, found: true} )}>
                   <Block flex style={styles.horizontalStyles}>
                     <Image source={{uri: item.photo}} style={styles.horizontalImage} />
                   </Block>
                 </TouchableWithoutFeedback>
-                <TouchableWithoutFeedback onPress={() => props.navigation.navigate("ItemDetails", {id : item.id})}>
+                <TouchableWithoutFeedback onPress={() => props.navigation.navigate("ItemDetails", {id : item.id, found: true})}>
                   <Block flex space="evenly" style={styles.cardDescription}>
                     <Text size={14} style={styles.cardTitle}>{item.name}</Text>
                     <Text size={12} style={styles.cardContent}>Modèle : {item.model}</Text>

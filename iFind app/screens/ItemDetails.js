@@ -20,7 +20,9 @@ const ItemDetails = (props) => {
 
     const getItem= async () => {
         const token = await AsyncStorage.getItem('jwt')
-        Axios.get("https://ifind-lsti.herokuapp.com/api/v1/lost/"+props.route.params.id, {
+        console.log(props.route.params)
+        const url = (props.route.params.found) ? "https://ifind-fndi.herokuapp.com/api/v1/found/" : "https://ifind-lsti.herokuapp.com/api/v1/lost/"
+        Axios.get(url+props.route.params.id, {
         headers: {
             Authorization: 'Bearer ' + token
         }
@@ -118,7 +120,8 @@ const ItemDetails = (props) => {
                     </Text>
                     <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Propriétaire : {item.user.firstName + " " +item.user.lastName}</Text>
                     <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Contact : {item.user.email}</Text>
-                    <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Date : {Date.parse(item.item.lostAt).toString("dd-MM-yyyy h:MM:ss tt")}</Text>
+                    {props.route.params.found && <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Date : {Date.parse(item.item.foundAt).toString("dd-MM-yyyy h:MM:ss tt")}</Text>}
+                    {!props.route.params.found && <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Date : {Date.parse(item.item.lostAt).toString("dd-MM-yyyy h:MM:ss tt")}</Text>}
                     <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Modèle : {item.item.model}</Text>
                     <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Couleur : {item.item.color}</Text>
                     <Text style={styles.attributes} color={argonTheme.COLORS.BLACK} >Description : {"\n"+item.item.description}</Text>
