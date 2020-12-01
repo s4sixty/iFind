@@ -1,6 +1,10 @@
 # iFind
+
+![iFind logo](https://github.com/s4sixty/iFind/blob/master/iFind%20app/assets/imgs/iFindBanner.png)
  
 Plateforme user-friendly qui vous aide à retrouver vos objets perdus.
+
+![Page d'accueil](https://github.com/s4sixty/iFind/blob/master/iFind%20app/assets/imgs/home.png)
 
 | Image | Link | Docuemnetation |
 | ------------- | ------------- | ------------- |
