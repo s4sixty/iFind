@@ -6,7 +6,7 @@ Plateforme user-friendly qui vous aide à retrouver vos objets perdus.
 
 ![Page d'accueil](https://github.com/s4sixty/iFind/blob/master/iFind%20app/assets/imgs/home.png)
 
-| Image | Link | Docuemnetation |
+| Image | Link | Docuementation |
 | ------------- | ------------- | ------------- |
 | Api Gateway (base) | https://ifind-gtw.herokuapp.com/ | API Gateway (ocelot)
 | Found Items Service (base) | https://ifind-fndi.herokuapp.com/ | https://ifind-fndi.herokuapp.com/swagger
