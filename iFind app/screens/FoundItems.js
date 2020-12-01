@@ -6,14 +6,17 @@ import {
   TouchableWithoutFeedback,
   Dimensions,
   AsyncStorage,
-  ActivityIndicator
+  ActivityIndicator,
+  View,
 } from "react-native";
 //galio
-import { Block, Text, theme } from "galio-framework";
+import { Block, Button, Text, theme } from "galio-framework";
 //argon
 import { argonTheme } from "../constants/";
 import Axios from "axios";
 require('datejs');
+import { FloatingAction } from "react-native-floating-action";
+import Modal from 'react-native-modal';
 
 const { width } = Dimensions.get("screen");
 
@@ -23,13 +26,24 @@ const cardWidth = width - theme.SIZES.BASE * 2;
 const LostItems = (props) => {
   const [items, setItems] = useState([])
   const [isLoading, setLoading] = useState(true)
+  const [isVisible, setVisible] = useState(false)
   useEffect(() => {
     getLostItems()
   }, []);
 
+  // hide show modal
+  const displayModal = (show) => {
+    setVisible(show)
+  }
+
+  // hide show modal
+  const submitItem = () => {
+    displayModal(false)
+  }
+
   const getLostItems= async () => {
     const token = await AsyncStorage.getItem('jwt')
-    Axios.get("https://ifind-fndi.herokuapp.com/api/v1/found/all", {
+    Axios.get("https://ifind-gtw.herokuapp.com/api/v1/found/all", {
       headers: {
         Authorization: 'Bearer ' + token
       }
@@ -37,7 +51,7 @@ const LostItems = (props) => {
     .then(res => {
       setItems(res.data)
       setLoading(false)
-      console.log(res.data)
+      //console.log(res.data)
     })
     .catch(err => {
       console.log(err)
@@ -77,9 +91,21 @@ const LostItems = (props) => {
   };
   return (
     <Block flex center>
+      <Modal isVisible={isVisible} style={{backgroundColor:'white'}}>
+          <Text>Ici il y aura un formulaire pour faire vos réclamations !</Text>
+          <Button onPress={() => submitItem()}>Fermer</Button>
+      </Modal>
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.articles}>
         {renderCards()}
       </ScrollView>
+      <FloatingAction
+        showBackground={false}
+        onPressMain={name => {
+          console.log(`selected button: ${name}`);
+          displayModal(true)
+        }}
+        visible={true}
+      />
     </Block>
   );
 }

@@ -7,7 +7,8 @@ import {
   KeyboardAvoidingView,
   Image,
   Alert,
-  AsyncStorage
+  AsyncStorage,
+  ActivityIndicator
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
@@ -19,27 +20,31 @@ const { width, height } = Dimensions.get("screen");
 
 const Login = (props) => {
 
-  const [isLoading, setLoading] = React.useState(true)
+  const [isLoading, setLoading] = React.useState(false)
   const [email, setEmail] = React.useState(null);
   const [error, setError] = React.useState('');
   const [password, setPassword] = React.useState(null);
   async function signIn(){
-    props.navigation.navigate("App")
+    //props.navigation.navigate("App")
     if(email!=null && password!=null) {
-      axios.post(`https://ifind-auth.herokuapp.com/api/v1/login`, { email, password })
+      setLoading(true)
+      axios.post(`https://ifind-gtw.herokuapp.com/api/v1/login`, { email, password })
       .then(async res => {
         try {
           await AsyncStorage.setItem('jwt',res.data.token)
           console.log(res.data.token)
           Alert.alert('Bienvenue '+res.data.user.firstName.charAt(0).toUpperCase() + res.data.user.firstName.slice(1)+' !')
+          setLoading(false)
           props.navigation.navigate("App")
         } catch(e) {
           console.log(e)
+          setLoading(false)
         }
       })
       .catch(err => {
         console.log(err)
         setError("Vos identifiants sont incorrects.")
+        setLoading(false)
       })
     } else {
       setError("Veuillez renseignez vos identifiants.")
@@ -114,23 +119,24 @@ const Login = (props) => {
                         </Text>
                       </Block>
                     </Block>
+                    {isLoading && <ActivityIndicator style={styles.activityIndicator} color={argonTheme.COLORS.DEFAULT} size="large" />}
                     <Block row width={width * 0.75}>
                       <Checkbox
                         checkboxStyle={{
                           borderWidth: 3
                         }}
                         color={argonTheme.COLORS.PRIMARY}
-                        label="I agree with the"
+                        label="J'accepte les"
                       />
                       <Button
-                        style={{ width: 100 }}
+                        style={{ width: 150 }}
                         color="transparent"
                         textStyle={{
                           color: argonTheme.COLORS.PRIMARY,
                           fontSize: 14
                         }}
                       >
-                        Privacy Policy
+                        conditions d'utilisation
                       </Button>
                     </Block>
                     <Block middle>

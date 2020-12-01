@@ -29,7 +29,7 @@ const Profile = (props) => {
 
   const getProfile = async () => {
     const token = await AsyncStorage.getItem('jwt')
-    Axios.get("https://ifind-auth.herokuapp.com/api/v1/users", {
+    Axios.get("https://ifind-gtw.herokuapp.com/api/v1/users", {
       headers: {
         Authorization: 'Bearer ' + token
       }
@@ -89,7 +89,7 @@ const Profile = (props) => {
                       color="#525F7F"
                       style={{ marginBottom: 4 }}
                     >
-                      2
+                      0
                     </Text>
                     <Text size={12} color={argonTheme.COLORS.TEXT}>Objets perdus</Text>
                   </Block>
@@ -100,7 +100,7 @@ const Profile = (props) => {
                       size={18}
                       style={{ marginBottom: 4 }}
                     >
-                      10
+                      0
                     </Text>
                     <Text size={12} color={argonTheme.COLORS.TEXT}>Objets trouvés</Text>
                   </Block>

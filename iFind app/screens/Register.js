@@ -1,23 +1,53 @@
-import React from "react";
+import React, {useState} from "react";
 import {
   StyleSheet,
   ImageBackground,
   Dimensions,
   StatusBar,
   KeyboardAvoidingView,
-  Image
+  Image,
+  Alert,
+  AsyncStorage
 } from "react-native";
 import { Block, Checkbox, Text, theme } from "galio-framework";
 
 import { Button, Icon, Input } from "../components";
 import { Images, argonTheme } from "../constants";
+import axios from "axios";
 
 const { width, height } = Dimensions.get("screen");
 
-class Register extends React.Component {
+const Register = (props) => {
 
-  render() {
-    const { navigation } = this.props;
+  const [isLoading, setLoading] = React.useState(true)
+  const [firstName, setFirstName] = React.useState(null);
+  const [lastName, setLastName] = React.useState(null);
+  const [email, setEmail] = React.useState(null);
+  const [error, setError] = React.useState('');
+  const [password, setPassword] = React.useState(null);
+  async function signIn(){
+    //props.navigation.navigate("App")
+    if(email!=null && password!=null) {
+      axios.post(`https://ifind-gtw.herokuapp.com/api/v1/register`, {firstName, lastName, email, password })
+      .then(async res => {
+        try {
+          await AsyncStorage.setItem('jwt',res.data.token)
+          console.log(res.data.token)
+          Alert.alert('Bienvenue '+res.data.user.firstName.charAt(0).toUpperCase() + res.data.user.firstName.slice(1)+' !')
+          props.navigation.navigate("App")
+        } catch(e) {
+          console.log(e)
+        }
+      })
+      .catch(err => {
+        console.log(err)
+        setError("Vos identifiants sont incorrects.")
+      })
+    } else {
+      setError("Veuillez renseignez vos identifiants.")
+      console.log(error)
+    }
+  }
 
     return (
       <Block flex middle>
@@ -39,7 +69,7 @@ class Register extends React.Component {
               <Block flex>
                 <Block flex={0.17} middle>
                   <Text color="#8898AA" size={12}>
-                    Commencez par insérer vos identifiants
+                    Créez un compte pour démarrer
                   </Text>
                 </Block>
                 <Block flex center>
@@ -48,25 +78,43 @@ class Register extends React.Component {
                     behavior="padding"
                     enabled
                   >
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                    <Block width={width * 0.8} style={{ marginBottom: 5 }}>
                       <Input
                         borderless
-                        placeholder="Name"
+                        placeholder="Prénom"
+                        onChangeText={(data) => setFirstName(data)}
                         iconContent={
                           <Icon
                             size={16}
                             color={argonTheme.COLORS.ICON}
-                            name="hat-3"
+                            name="ic_mail_24px"
                             family="ArgonExtra"
                             style={styles.inputIcons}
                           />
                         }
                       />
                     </Block>
-                    <Block width={width * 0.8} style={{ marginBottom: 15 }}>
+                    <Block width={width * 0.8} style={{ marginBottom: 5 }}>
+                      <Input
+                        borderless
+                        placeholder="Nom"
+                        onChangeText={(data) => setLastName(data)}
+                        iconContent={
+                          <Icon
+                            size={16}
+                            color={argonTheme.COLORS.ICON}
+                            name="ic_mail_24px"
+                            family="ArgonExtra"
+                            style={styles.inputIcons}
+                          />
+                        }
+                      />
+                    </Block>
+                    <Block width={width * 0.8} style={{ marginBottom: 5 }}>
                       <Input
                         borderless
                         placeholder="Email"
+                        onChangeText={(data) => setEmail(data)}
                         iconContent={
                           <Icon
                             size={16}
@@ -83,6 +131,7 @@ class Register extends React.Component {
                         password
                         borderless
                         placeholder="Password"
+                        onChangeText={(data) => setPassword(data)}
                         iconContent={
                           <Icon
                             size={16}
@@ -94,12 +143,8 @@ class Register extends React.Component {
                         }
                       />
                       <Block row style={styles.passwordCheck}>
-                        <Text size={12} color={argonTheme.COLORS.MUTED}>
-                          password strength:
-                        </Text>
-                        <Text bold size={12} color={argonTheme.COLORS.SUCCESS}>
-                          {" "}
-                          strong
+                        <Text size={12} color={argonTheme.COLORS.ERROR} >
+                          {error}
                         </Text>
                       </Block>
                     </Block>
@@ -109,24 +154,24 @@ class Register extends React.Component {
                           borderWidth: 3
                         }}
                         color={argonTheme.COLORS.PRIMARY}
-                        label="I agree with the"
+                        label="J'accepte les"
                       />
                       <Button
-                        style={{ width: 100 }}
+                        style={{ width: 150 }}
                         color="transparent"
                         textStyle={{
                           color: argonTheme.COLORS.PRIMARY,
                           fontSize: 14
                         }}
                       >
-                        Privacy Policy
+                        conditions d'utilisation
                       </Button>
                     </Block>
                     <Block middle>
                       <Button 
                       color="primary" 
                       style={styles.createButton}
-                      onPress={() => navigation.navigate("App")}
+                      onPress={() => signIn()}
                       >
                         <Text bold size={14} color={argonTheme.COLORS.WHITE}>
                           S'authentifier
@@ -137,7 +182,7 @@ class Register extends React.Component {
                       <Button 
                       color="secondary" 
                       style={styles.createButton}
-                      onPress={() => navigation.navigate("App")}
+                      onPress={() => props.navigation.navigate("Register")}
                       >
                         <Text bold size={14} color={argonTheme.COLORS.BLACK}>
                           Créer un compte
@@ -152,7 +197,6 @@ class Register extends React.Component {
         </ImageBackground>
       </Block>
     );
-  }
 }
 
 const styles = StyleSheet.create({
@@ -205,7 +249,11 @@ const styles = StyleSheet.create({
   createButton: {
     width: width * 0.5,
     marginTop: 25
-  }
+  },
+  logo: {
+    width: 200,
+    height: 60,
+  },
 });
 
 export default Register;

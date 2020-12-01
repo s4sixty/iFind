@@ -70,6 +70,18 @@ namespace FoundItemsService.Controllers
             return Ok(model);
         }
 
+        // GET: version/<LostController>
+        [HttpGet]
+        public ActionResult<FoundItem> GetAsync()
+        {
+            int id = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            var items = db.FoundItems.Where(c => c.UserId == id).ToList();
+
+            ICollection<FoundItemDTO> model = _mapper.Map<ICollection<FoundItem>, ICollection<FoundItemDTO>>(items);
+
+            return Ok(model);
+        }
+
         // POST version/<FoundController>
         [HttpPost]
         public IActionResult Post([FromBody] FoundItem item)

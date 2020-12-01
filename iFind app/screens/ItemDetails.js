@@ -14,14 +14,14 @@ const ItemDetails = (props) => {
     const [isLoading, setLoading] = useState(true)
     const [commentLoading, setCommentLoading] = useState(false)
     useEffect(() => {
-        console.log(props)
+        //console.log(props)
         getItem()
     }, []);
+    const url = (props.route.params.found) ? "https://ifind-gtw.herokuapp.com/api/v1/found/" : "https://ifind-gtw.herokuapp.com/api/v1/lost/"
 
     const getItem= async () => {
         const token = await AsyncStorage.getItem('jwt')
-        console.log(props.route.params)
-        const url = (props.route.params.found) ? "https://ifind-fndi.herokuapp.com/api/v1/found/" : "https://ifind-lsti.herokuapp.com/api/v1/lost/"
+        //console.log(props.route.params)
         Axios.get(url+props.route.params.id, {
         headers: {
             Authorization: 'Bearer ' + token
@@ -31,7 +31,7 @@ const ItemDetails = (props) => {
             setItem({item: res.data.item[0], user: res.data.owner})
             setLoading(false)
             getComments(res.data.item[0].comments)
-            //console.log(res.data.item[0].comments)
+            console.log(res.data.item[0].comments)
         })
         .catch(err => {
             console.log(err)
@@ -41,7 +41,7 @@ const ItemDetails = (props) => {
     const getComments = async (comments) => {
         const token = await AsyncStorage.getItem('jwt')
         var requests = comments.map((comment)=> {
-            return Axios.get("https://ifind-auth.herokuapp.com/api/v1/users/"+comment.userId, {
+            return Axios.get("https://ifind-gtw.herokuapp.com/api/v1/users/"+comment.userId, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -62,7 +62,8 @@ const ItemDetails = (props) => {
     const sendComment = async (comment) => {
         setCommentLoading(true)
         const token = await AsyncStorage.getItem('jwt')
-        Axios.post("https://ifind-lsti.herokuapp.com/api/v1/lost/"+props.route.params.id+"/comments",{description: comment}, {
+        //console.log(url)
+        Axios.post(url+props.route.params.id+"/comments",{description: comment}, {
             headers: {
                 Authorization: 'Bearer ' + token
             }
@@ -81,8 +82,9 @@ const ItemDetails = (props) => {
             <Block flex>
                 <Text h6 style={{margin : 6}} color={argonTheme.COLORS.DEFAULT} > Commentaires </Text>
                 {comments.map((comment)=> {
+                    console.log(comment)
                 return (
-                <Block key={comment.Id} card flex style={[styles.card, styles.shadow]}>
+                <Block key={comment.id} card flex style={[styles.card, styles.shadow]}>
                     <Block flex style={styles.cardDescription}>
                         <Text style={styles.attributes} color={argonTheme.COLORS.DEFAULT} bold>{comment.firstName+ " "+comment.lastName+" ("+Date.parse(comment.createdAt).toString("dd-MM-yyyy h:MM:ss tt")+")"} </Text>
                         <Text style={styles.contact} bold>{comment.email} </Text>
@@ -148,6 +150,7 @@ const ItemDetails = (props) => {
         </Block>
         <GiftedChat
             onSend={(value) => {sendComment(value[0].text)}}
+            placeholder="Ecrivez un commentaire.."
         />
       </>
     );
