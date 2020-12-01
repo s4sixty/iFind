@@ -1,54 +1,188 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/v1/users",
-      "DownstreamScheme": "http",
+      // Authenticantion service routes
+      "DownstreamPathTemplate": "/api/v1/users",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-auth.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/users",
+      "UpstreamPathTemplate": "/api/v1/users",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
-      "DownstreamPathTemplate": "/v1/users/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/v1/users/{id}",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-auth.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/users/{id}",
+      "UpstreamPathTemplate": "/api/v1/users/{id}",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
-      "DownstreamPathTemplate": "/v1/login",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/v1/login",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-auth.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/login",
+      "UpstreamPathTemplate": "/api/v1/login",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     },
     {
-      "DownstreamPathTemplate": "/v1/register",
-      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/api/v1/register",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5100
+          "Host": "ifind-auth.herokuapp.com",
+          "Port": 443
         }
       ],
-      "UpstreamPathTemplate": "/v1/register",
+      "UpstreamPathTemplate": "/api/v1/register",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+
+    // LostItem service routes
+    {
+      "DownstreamPathTemplate": "/api/v1/lost",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-lsti.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/lost",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/lost/all",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-lsti.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/lost/all",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/lost/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-lsti.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/lost/{id}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/lost/{id}/comments",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-lsti.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/lost/{id}/comments",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/lost/{id}/comments/{commentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-lsti.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/lost/{id}/comments/{commentId}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    // FoundItem service routes
+    {
+      "DownstreamPathTemplate": "/api/v1/found",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/found",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/found/all",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/found/all",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/found/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/found/{id}",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/found/{id}/comments",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/found/{id}/comments",
+      "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
+      "FileCacheOptions": { "TtlSeconds": 15 }
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/found/{id}/comments/{commentId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "ifind-fndi.herokuapp.com",
+          "Port": 443
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/found/{id}/comments/{commentId}",
       "UpstreamHttpMethod": [ "POST", "PUT", "GET", "DELETE" ],
       "FileCacheOptions": { "TtlSeconds": 15 }
     }

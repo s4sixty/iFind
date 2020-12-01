@@ -19,7 +19,34 @@ namespace FoundItemsService.Migrations
                 .HasAnnotation("ProductVersion", "3.1.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            modelBuilder.Entity("LostItemsService.Database.Entities.FoundItem", b =>
+            modelBuilder.Entity("FoundItemsService.Database.Entities.Comments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int?>("FoundItemId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FoundItemId");
+
+                    b.ToTable("Comments");
+                });
+
+            modelBuilder.Entity("FoundItemsService.Database.Entities.FoundItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -38,13 +65,7 @@ namespace FoundItemsService.Migrations
                         .HasColumnType("character varying(5000)")
                         .HasMaxLength(5000);
 
-                    b.Property<bool>("Found")
-                        .HasColumnType("boolean");
-
-                    b.Property<DateTime?>("FoundAt")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<DateTime>("LostAt")
+                    b.Property<DateTime>("FoundAt")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<string>("Model")
@@ -58,59 +79,31 @@ namespace FoundItemsService.Migrations
                         .HasColumnType("character varying(20)")
                         .HasMaxLength(20);
 
+                    b.Property<bool>("OwnerFound")
+                        .HasColumnType("boolean");
+
+                    b.Property<DateTime?>("OwnerFoundAt")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("text");
+
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
+
+                    b.Property<string>("city")
+                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
                     b.ToTable("FoundItems");
                 });
 
-            modelBuilder.Entity("LostItemsService.Database.Entities.Owner", b =>
+            modelBuilder.Entity("FoundItemsService.Database.Entities.Comments", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("Address")
-                        .HasColumnType("character varying(100)")
-                        .HasMaxLength(100);
-
-                    b.Property<string>("City")
-                        .HasColumnType("character varying(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("character varying(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("character varying(20)")
-                        .HasMaxLength(20);
-
-                    b.Property<DateTime>("ModifiedAt")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<string>("ZipCode")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Owners");
+                    b.HasOne("FoundItemsService.Database.Entities.FoundItem", "FoundItem")
+                        .WithMany("Comments")
+                        .HasForeignKey("FoundItemId");
                 });
 #pragma warning restore 612, 618
         }

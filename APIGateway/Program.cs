@@ -39,11 +39,12 @@ namespace APIGateway
                 {
                     config.AddJsonFile("ocelot.json");
                 })
-                .ConfigureLogging(logging =>
+                .ConfigureLogging((hostingContext, logging) =>
                 {
-                    logging.ClearProviders();
-                    logging.SetMinimumLevel(LogLevel.Information);
+                    logging.AddConfiguration(hostingContext.Configuration.GetSection("Logging"));
                     logging.AddConsole();
+                    logging.AddDebug();
+                    logging.AddEventSourceLogger();
                 })
                 .UseNLog()
             ;

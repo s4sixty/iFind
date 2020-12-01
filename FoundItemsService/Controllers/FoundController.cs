@@ -19,7 +19,7 @@ using System.Threading.Tasks;
 
 namespace FoundItemsService.Controllers
 {
-    [Route("api/v{version:apiVersion}/Found")]
+    [Route("api/v{version:apiVersion}/found")]
     [ApiVersion("1.0")]
     [ApiController]
     [Authorize]
@@ -64,6 +64,18 @@ namespace FoundItemsService.Controllers
         public ActionResult<FoundItem> GetAllAsync()
         {
             var items = db.FoundItems.ToList();
+
+            ICollection<FoundItemDTO> model = _mapper.Map<ICollection<FoundItem>, ICollection<FoundItemDTO>>(items);
+
+            return Ok(model);
+        }
+
+        // GET: version/<LostController>
+        [HttpGet]
+        public ActionResult<FoundItem> GetAsync()
+        {
+            int id = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            var items = db.FoundItems.Where(c => c.UserId == id).ToList();
 
             ICollection<FoundItemDTO> model = _mapper.Map<ICollection<FoundItem>, ICollection<FoundItemDTO>>(items);
 

@@ -1,0 +1,393 @@
+2020-12-01 11:55:35.8287||DEBUG|APIGateway.Program|init main function 
+2020-12-01 11:55:36.8423||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 11:55:36.8423||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 11:55:36.8516||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 11:55:36.9533||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800004f0-0005-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 11:55:36.9574||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800004f0-0005-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/2 
+2020-12-01 11:55:36.9574||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800004f0-0005-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 11:55:37.0256||ERROR|Ocelot.Errors.Middleware.ExceptionHandlerMiddleware|requestId: 800004f0-0005-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Invalid URI: The hostname could not be parsed., exception stack:    at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at System.UriBuilder.get_Uri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToUri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToString()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Ocelot.DownstreamUrlCreator.Middleware.DownstreamUrlCreatorMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.LoadBalancer.Middleware.LoadBalancingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamPathManipulation.Middleware.ClaimsToDownstreamPathMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.QueryStrings.Middleware.ClaimsToQueryStringMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.ClaimsToHeadersMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authorisation.Middleware.AuthorisationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Claims.Middleware.ClaimsToClaimsMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authentication.Middleware.AuthenticationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RequestId.Middleware.RequestIdMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Fire(HttpContext httpContext, RequestDelegate next)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(HttpContext httpContext) RequestId: 800004f0-0005-ff00-b63f-84710c7967bb, exception: System.UriFormatException: Invalid URI: The hostname could not be parsed.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at System.UriBuilder.get_Uri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToUri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToString()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Ocelot.DownstreamUrlCreator.Middleware.DownstreamUrlCreatorMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.LoadBalancer.Middleware.LoadBalancingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamPathManipulation.Middleware.ClaimsToDownstreamPathMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.QueryStrings.Middleware.ClaimsToQueryStringMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.ClaimsToHeadersMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authorisation.Middleware.AuthorisationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Claims.Middleware.ClaimsToClaimsMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authentication.Middleware.AuthenticationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RequestId.Middleware.RequestIdMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Fire(HttpContext httpContext, RequestDelegate next)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(HttpContext httpContext) Invalid URI: The hostname could not be parsed.
+2020-12-01 11:57:18.9951||DEBUG|APIGateway.Program|init main function 
+2020-12-01 11:57:19.8190||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 11:57:19.8190||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 11:57:19.8190||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 11:57:19.9247||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000002-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 11:57:19.9281||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000002-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/2 
+2020-12-01 11:57:19.9281||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000002-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 11:57:19.9788||ERROR|Ocelot.Errors.Middleware.ExceptionHandlerMiddleware|requestId: 80000002-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Invalid URI: The hostname could not be parsed., exception stack:    at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at System.UriBuilder.get_Uri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToUri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToString()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Ocelot.DownstreamUrlCreator.Middleware.DownstreamUrlCreatorMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.LoadBalancer.Middleware.LoadBalancingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamPathManipulation.Middleware.ClaimsToDownstreamPathMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.QueryStrings.Middleware.ClaimsToQueryStringMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.ClaimsToHeadersMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authorisation.Middleware.AuthorisationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Claims.Middleware.ClaimsToClaimsMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authentication.Middleware.AuthenticationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RequestId.Middleware.RequestIdMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Fire(HttpContext httpContext, RequestDelegate next)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(HttpContext httpContext) RequestId: 80000002-0001-f900-b63f-84710c7967bb, exception: System.UriFormatException: Invalid URI: The hostname could not be parsed.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at System.UriBuilder.get_Uri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToUri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToString()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Ocelot.DownstreamUrlCreator.Middleware.DownstreamUrlCreatorMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.LoadBalancer.Middleware.LoadBalancingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamPathManipulation.Middleware.ClaimsToDownstreamPathMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.QueryStrings.Middleware.ClaimsToQueryStringMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.ClaimsToHeadersMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authorisation.Middleware.AuthorisationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Claims.Middleware.ClaimsToClaimsMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authentication.Middleware.AuthenticationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RequestId.Middleware.RequestIdMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Fire(HttpContext httpContext, RequestDelegate next)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(HttpContext httpContext) Invalid URI: The hostname could not be parsed.
+2020-12-01 11:57:56.5045||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000003-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 11:57:56.5045||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000003-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 11:57:56.5045||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000003-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 11:57:56.5282||ERROR|Ocelot.Errors.Middleware.ExceptionHandlerMiddleware|requestId: 80000003-0001-f900-b63f-84710c7967bb, previousRequestId: no previous request id, message: Exception caught in global error handler, exception message: Invalid URI: The hostname could not be parsed., exception stack:    at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at System.UriBuilder.get_Uri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToUri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToString()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Ocelot.DownstreamUrlCreator.Middleware.DownstreamUrlCreatorMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.LoadBalancer.Middleware.LoadBalancingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamPathManipulation.Middleware.ClaimsToDownstreamPathMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.QueryStrings.Middleware.ClaimsToQueryStringMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.ClaimsToHeadersMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authorisation.Middleware.AuthorisationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Claims.Middleware.ClaimsToClaimsMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authentication.Middleware.AuthenticationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RequestId.Middleware.RequestIdMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Fire(HttpContext httpContext, RequestDelegate next)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(HttpContext httpContext) RequestId: 80000003-0001-f900-b63f-84710c7967bb, exception: System.UriFormatException: Invalid URI: The hostname could not be parsed.
+   at System.Uri.CreateThis(String uri, Boolean dontEscape, UriKind uriKind)
+   at System.Uri..ctor(String uriString)
+   at System.UriBuilder.get_Uri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToUri()
+   at Ocelot.Request.Middleware.DownstreamRequest.ToString()
+   at System.Text.StringBuilder.AppendFormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.FormatHelper(IFormatProvider provider, String format, ParamsArray args)
+   at System.String.Format(String format, Object arg0)
+   at Ocelot.DownstreamUrlCreator.Middleware.DownstreamUrlCreatorMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.LoadBalancer.Middleware.LoadBalancingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamPathManipulation.Middleware.ClaimsToDownstreamPathMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.QueryStrings.Middleware.ClaimsToQueryStringMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.ClaimsToHeadersMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authorisation.Middleware.AuthorisationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Claims.Middleware.ClaimsToClaimsMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Authentication.Middleware.AuthenticationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RequestId.Middleware.RequestIdMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Request.Middleware.DownstreamRequestInitialiserMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Headers.Middleware.HttpHeadersTransformationMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Security.Middleware.SecurityMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Fire(HttpContext httpContext, RequestDelegate next)
+   at Ocelot.Multiplexer.MultiplexingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.DownstreamRouteFinder.Middleware.DownstreamRouteFinderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Responder.Middleware.ResponderMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Builder.Extensions.MapWhenMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.MiddlewareAnalysis.AnalysisMiddleware.Invoke(HttpContext httpContext)
+   at Ocelot.Errors.Middleware.ExceptionHandlerMiddleware.Invoke(HttpContext httpContext) Invalid URI: The hostname could not be parsed.
+2020-12-01 11:58:43.5328||DEBUG|APIGateway.Program|init main function 
+2020-12-01 11:58:44.3355||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 11:58:44.3355||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 11:58:44.3474||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 11:58:44.4453||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 8000001e-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 11:58:44.4453||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 8000001e-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 11:58:44.4453||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 8000001e-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 11:58:44.6370||WARN|Ocelot.Responder.Middleware.ResponderMiddleware|requestId: 8000001e-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: Error Code: ConnectionToDownstreamServiceError Message: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Ocelot.Requester.HttpClientHttpRequester.GetResponse(HttpContext httpContext) errors found in ResponderMiddleware. Setting error response for request path:/api/v1/users/all, request method: GET 
+2020-12-01 11:58:56.1093||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 8000001f-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 11:58:56.1093||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 8000001f-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 11:58:56.1093||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 8000001f-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 11:58:56.1632||WARN|Ocelot.Responder.Middleware.ResponderMiddleware|requestId: 8000001f-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: Error Code: ConnectionToDownstreamServiceError Message: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Ocelot.Requester.HttpClientHttpRequester.GetResponse(HttpContext httpContext) errors found in ResponderMiddleware. Setting error response for request path:/api/v1/users/all, request method: GET 
+2020-12-01 11:59:26.3526||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000020-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 11:59:26.3526||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000020-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 11:59:26.3526||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000020-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 11:59:26.5993||WARN|Ocelot.Responder.Middleware.ResponderMiddleware|requestId: 80000020-0007-f700-b63f-84710c7967bb, previousRequestId: no previous request id, message: Error Code: ConnectionToDownstreamServiceError Message: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Ocelot.Requester.HttpClientHttpRequester.GetResponse(HttpContext httpContext) errors found in ResponderMiddleware. Setting error response for request path:/api/v1/login, request method: POST 
+2020-12-01 12:04:29.3730||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:04:30.2311||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:04:30.2401||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:04:30.2401||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:04:30.3431||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:04:30.3486||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:04:30.3486||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:04:30.5625||WARN|Ocelot.Responder.Middleware.ResponderMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: Error Code: ConnectionToDownstreamServiceError Message: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Ocelot.Requester.HttpClientHttpRequester.GetResponse(HttpContext httpContext) errors found in ResponderMiddleware. Setting error response for request path:/api/v1/login, request method: POST 
+2020-12-01 12:09:04.7169||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:09:05.5887||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:09:05.6204||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:09:05.6204||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:09:05.7206||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:09:05.7263||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:09:05.7263||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:09:06.4681||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 404 (Not Found) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/login 
+2020-12-01 12:09:22.9990||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 12:09:22.9990||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 12:09:23.0085||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 12:09:23.1766||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 404 (Not Found) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/users/all 
+2020-12-01 12:10:16.0575||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:10:16.9740||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:10:16.9740||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:10:16.9878||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:10:17.0848||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 12:10:17.0848||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 12:10:17.0848||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 12:10:17.4443||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 404 (Not Found) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/users/all 
+2020-12-01 12:13:11.4830||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:13:12.2812||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:13:12.2892||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:13:12.2892||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:13:12.3910||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 12:13:12.3958||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 12:13:12.3958||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 12:13:13.1330||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000390-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 405 (Method Not Allowed) status code, request uri: https://ifind-auth.herokuapp.com/api/v1/users/all 
+2020-12-01 12:13:21.5513||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:13:21.5513||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:13:21.5513||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:13:23.9026||INFO|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000391-0006-ff00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 200 (OK) status code, request uri: https://ifind-auth.herokuapp.com/api/v1/login 
+2020-12-01 12:19:57.1175||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:19:57.9720||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:19:57.9772||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:19:57.9772||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:19:58.0928||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:19:58.0980||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:19:58.0980||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:19:58.7665||INFO|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800000f3-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 200 (OK) status code, request uri: https://ifind-auth.herokuapp.com/api/v1/login 
+2020-12-01 12:20:11.0806||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/found/all 
+2020-12-01 12:20:11.0835||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/found/all 
+2020-12-01 12:20:11.0835||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/found/all route does not require user to be authorised 
+2020-12-01 12:20:13.8880||INFO|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800000f4-000b-fe00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 200 (OK) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/found/all 

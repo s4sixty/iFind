@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FoundItemsService.Controllers
 {
-    [Route("api/v{version:apiVersion}/Found")]
+    [Route("api/v{version:apiVersion}/found")]
     [ApiVersion("1.0")]
     [ApiController]
     [Authorize]

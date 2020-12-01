@@ -98,6 +98,18 @@ namespace LostItemsService.Controllers
             }
         }
 
+        // GET: version/<LostController>
+        [HttpGet]
+        public ActionResult<LostItem> GetAsync()
+        {
+            int id = int.Parse(User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value);
+            var items = db.LostItems.Where(c=> c.UserId == id).ToList();
+
+            ICollection<LostItemDTO> model = _mapper.Map<ICollection<LostItem>, ICollection<LostItemDTO>>(items);
+
+            return Ok(model);
+        }
+
         // POST version/<LostController>
         [HttpPut]
         public IActionResult Put([FromBody] LostItem item)
