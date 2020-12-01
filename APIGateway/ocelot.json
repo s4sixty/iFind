@@ -3,7 +3,7 @@
     {
       // Authenticantion service routes
       "DownstreamPathTemplate": "/api/v1/users",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "ifind-fndi.herokuapp.com",
@@ -16,7 +16,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/users/{id}",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "ifind-fndi.herokuapp.com",
@@ -29,7 +29,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/login",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "ifind-fndi.herokuapp.com",
@@ -42,7 +42,7 @@
     },
     {
       "DownstreamPathTemplate": "/api/v1/register",
-      "DownstreamScheme": "http",
+      "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
         {
           "Host": "ifind-fndi.herokuapp.com",

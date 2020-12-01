@@ -328,3 +328,42 @@
    at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
    at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
    at Ocelot.Requester.HttpClientHttpRequester.GetResponse(HttpContext httpContext) errors found in ResponderMiddleware. Setting error response for request path:/api/v1/login, request method: POST 
+2020-12-01 12:04:29.3730||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:04:30.2311||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:04:30.2401||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:04:30.2401||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:04:30.3431||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:04:30.3486||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:04:30.3486||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:04:30.5625||WARN|Ocelot.Responder.Middleware.ResponderMiddleware|requestId: 80000127-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: Error Code: ConnectionToDownstreamServiceError Message: Error connecting to downstream service, exception: System.Net.Http.HttpRequestException: An error occurred while sending the request.
+ ---> System.IO.IOException: The response ended prematurely.
+   at System.Net.Http.HttpConnection.FillAsync()
+   at System.Net.Http.HttpConnection.ReadNextResponseHeaderLineAsync(Boolean foldedHeadersAllowed)
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpConnection.SendAsyncCore(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithNtConnectionAuthAsync(HttpConnection connection, HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithRetryAsync(HttpRequestMessage request, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.DiagnosticsHandler.SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.Http.HttpClient.FinishSendAsyncBuffered(Task`1 sendTask, HttpRequestMessage request, CancellationTokenSource cts, Boolean disposeCts)
+   at Ocelot.Requester.HttpClientHttpRequester.GetResponse(HttpContext httpContext) errors found in ResponderMiddleware. Setting error response for request path:/api/v1/login, request method: POST 
+2020-12-01 12:09:04.7169||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:09:05.5887||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:09:05.6204||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:09:05.6204||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:09:05.7206||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/login 
+2020-12-01 12:09:05.7263||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/login 
+2020-12-01 12:09:05.7263||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/login route does not require user to be authorised 
+2020-12-01 12:09:06.4681||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800001c7-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 404 (Not Found) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/login 
+2020-12-01 12:09:22.9990||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 12:09:22.9990||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 12:09:23.0085||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 12:09:23.1766||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 800001c8-0000-fb00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 404 (Not Found) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/users/all 
+2020-12-01 12:10:16.0575||DEBUG|APIGateway.Program|init main function 
+2020-12-01 12:10:16.9740||INFO|Microsoft.Hosting.Lifetime|Application started. Press Ctrl+C to shut down. 
+2020-12-01 12:10:16.9740||INFO|Microsoft.Hosting.Lifetime|Hosting environment: Development 
+2020-12-01 12:10:16.9878||INFO|Microsoft.Hosting.Lifetime|Content root path: C:\HOMEWARE\dev\iFind\APIGateway 
+2020-12-01 12:10:17.0848||INFO|Ocelot.RateLimit.Middleware.ClientRateLimitMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: EndpointRateLimiting is not enabled for /api/v1/users/{id} 
+2020-12-01 12:10:17.0848||INFO|Ocelot.Authentication.Middleware.AuthenticationMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: No authentication needed for /api/v1/users/all 
+2020-12-01 12:10:17.0848||INFO|Ocelot.Authorisation.Middleware.AuthorisationMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: /api/v1/users/{id} route does not require user to be authorised 
+2020-12-01 12:10:17.4443||WARN|Ocelot.Requester.Middleware.HttpRequesterMiddleware|requestId: 80000129-0008-fc00-b63f-84710c7967bb, previousRequestId: no previous request id, message: 404 (Not Found) status code, request uri: https://ifind-fndi.herokuapp.com/api/v1/users/all 
